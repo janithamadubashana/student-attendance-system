@@ -1,0 +1,27 @@
+#btnNewStudent{
+    -fx-background-color: #37af37;
+}
+.text-field{
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+}
+#imgPicture{
+    -fx-border-color: grey;
+    -fx-border-width: 10px;
+}
+#btnBrowse,#btnClear,#btnDelete,#btnDelete,#btnSave{
+    -fx-background-color: #5a5ada;
+}
+.button{
+    -fx-text-fill: white;
+}
+.root{
+    -fx-background-color: #e1d7d7;
+}
+
+#imgPicture{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}

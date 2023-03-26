@@ -1,6 +1,9 @@
 package lk.ijse.dep10.sas;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.dep10.sas.db.DBConnection;
 
@@ -28,14 +31,20 @@ public class AppInitializer extends Application {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        }));
+        })                                                       );
         launch(args);
 
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
         generateSchemaIfNotExist();
+        FXMLLoader fxmlLoader=new FXMLLoader(this.getClass().getResource("/view/StudentView.fxml"));
+        AnchorPane root=fxmlLoader.load();
+        primaryStage.setScene(new Scene(root));
+        primaryStage.centerOnScreen();
+        primaryStage.setMaximized(true);
+        primaryStage.show();
     }
 
     private void generateSchemaIfNotExist() {
